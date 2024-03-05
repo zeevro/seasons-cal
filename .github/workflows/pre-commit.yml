@@ -1,0 +1,15 @@
+name: Run pre-commit
+
+run-name: ${{ github.workflow }} for ${{ github.ref_name }}
+
+on:
+  pull_request:
+  push:
+  workflow_dispatch:
+
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pre-commit/action@v3.0.1

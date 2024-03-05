@@ -1,0 +1,24 @@
+name: Run tests
+
+run-name: ${{ github.workflow }} for ${{ github.ref_name }}
+
+on:
+  pull_request:
+  push:
+  workflow_dispatch:
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version-file: pyproject.toml
+
+      - name: Install package
+        run: pip install .
+
+      - name: Run tests
+        run: python tests.py
