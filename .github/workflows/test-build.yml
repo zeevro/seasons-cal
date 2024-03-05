@@ -1,0 +1,27 @@
+name: Test build
+
+run-name: ${{ github.workflow }} for ${{ github.ref_name }}
+
+on:
+  pull_request:
+  push:
+  workflow_dispatch:
+
+jobs:
+  test-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version-file: pyproject.toml
+
+      - name: Install dependencies
+        run: pip install build twine
+
+      - name: Build
+        run: python -m build .
+
+      - name: Test build artifacts
+        run: python -m twine check dist/*

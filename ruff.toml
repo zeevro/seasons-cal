@@ -1,0 +1,15 @@
+line-length = 150
+
+[lint]
+select = ["ALL"]
+ignore = ["COM812", "ISC001", "D", "Q", "FBT", "PTH"]
+
+[lint.isort]
+force-sort-within-sections = true
+lines-after-imports = 2
+
+[lint.per-file-ignores]
+"tests.py" = ["T201", "TRY003", "EM102"]
+
+[format]
+quote-style = "single"
