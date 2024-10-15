@@ -17,8 +17,7 @@ jobs:
         with:
           python-version-file: pyproject.toml
 
-      - name: Install package
-        run: pip install .
+      - uses: astral-sh/setup-uv@v3
 
       - name: Run tests
-        run: python tests.py
+        run: uv run tests.py

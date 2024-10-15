@@ -4,3 +4,4 @@ dist/
 *.egg-info/
 *.dist-info/
 *.whl
+uv.lock
