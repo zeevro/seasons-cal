@@ -10,21 +10,15 @@ repos:
       - id: check-toml
       - id: debug-statements
 
-  - repo: https://github.com/ikamensh/flynt
-    rev: 1.0.1
-    hooks:
-      - id: flynt
-        args: [-tc, -tj]
-
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: v0.6.9
+    rev: v0.8.4
     hooks:
       - id: ruff
         args: [--fix]
       - id: ruff-format
 
   - repo: https://github.com/Mateusz-Grzelinski/actionlint-py
-    rev: v1.7.3.17
+    rev: v1.7.4.20
     hooks:
       - id: actionlint
         additional_dependencies: [ pyflakes>=3.0.1 ]
