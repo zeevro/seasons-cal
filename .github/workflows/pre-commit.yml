@@ -12,4 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: pre-commit/action@v3.0.1
+
+      - name: Run pre-commit
+        uses: zeevro/action-pre-commit-uv@main # TODO: Replace with tox-dev/action-pre-commit-uv once PR is merged
